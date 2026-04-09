@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bbsqq 的长期想法追踪</title>
+    <title>长期想法 - bbsqq</title>
     <style>
         * {
             margin: 0;
@@ -11,202 +11,127 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+            padding: 60px 24px;
         }
         .container {
-            max-width: 800px;
+            max-width: 680px;
             margin: 0 auto;
         }
         header {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
-        header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+        .back {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 16px;
         }
-        header p {
-            opacity: 0.8;
-            font-size: 0.95em;
+        .back:hover {
+            color: #333;
+        }
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         .project-card {
             background: white;
-            border-radius: 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
             padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .project-card:hover {
-            transform: translateY(-4px);
         }
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 16px;
         }
         .project-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #333;
-        }
-        .status-badge {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 1.1rem;
             font-weight: 500;
         }
-        .status-paused {
-            background: #fff3cd;
-            color: #856404;
-        }
-        .status-active {
-            background: #d4edda;
-            color: #155724;
-        }
-        .status-planning {
-            background: #cce5ff;
-            color: #004085;
-        }
-        .project-info {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 8px 16px;
-            font-size: 0.9em;
+        .status {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: #f5f5f5;
             color: #666;
         }
-        .project-info .label {
-            font-weight: 500;
-            color: #888;
+        .status-paused {
+            background: #fff8e6;
+            color: #b8860b;
         }
-        .project-notes {
+        .status-active {
+            background: #e6f7e6;
+            color: #2d7d2d;
+        }
+        .project-info {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .project-info strong {
+            color: #333;
+            font-weight: 500;
+        }
+        .project-note {
             margin-top: 16px;
             padding-top: 16px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.875rem;
             color: #555;
-            line-height: 1.6;
-        }
-        .progress-section {
-            margin-top: 40px;
-        }
-        .progress-section h2 {
-            color: white;
-            font-size: 1.3em;
-            margin-bottom: 20px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        .stat-number {
-            font-size: 2em;
-            font-weight: 700;
-        }
-        .stat-label {
-            font-size: 0.85em;
-            opacity: 0.8;
-            margin-top: 4px;
         }
         footer {
-            text-align: center;
-            margin-top: 40px;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.85em;
-        }
-        .tag {
-            display: inline-block;
-            background: #f0f0f0;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            margin-right: 6px;
-            margin-top: 8px;
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🌱 长期想法追踪</h1>
-            <p>记录那些值得持续投入的事情</p>
+            <a href="index.html" class="back">← 返回</a>
+            <h1 class="title">长期想法</h1>
+            <p class="subtitle">记录那些值得持续投入的事情</p>
         </header>
 
-        <!-- 项目卡片 -->
-        <div class="project-card">
-            <div class="project-header">
-                <span class="project-title">🃏 心理学漫画卡片</span>
-                <span class="status-badge status-paused">暂停中</span>
-            </div>
-            <div class="project-info">
-                <span class="label">当前进展</span>
-                <span>已提炼25张md格式卡片，图片生成效果不满意已删除</span>
-                <span class="label">文件位置</span>
-                <span>./暂停实验室课程/心理学漫画卡片/</span>
-                <span class="label">关键要求</span>
-                <span>扑克牌尺寸、暂停实验室温暖风格、核心概念+实例+行动提醒</span>
-            </div>
-            <div class="project-notes">
-                💡 <strong>下一步</strong>：调整图片风格或换其他生成方案
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-header">
-                <span class="project-title">📊 个人记忆可视化</span>
-                <span class="status-badge status-active">进行中</span>
-            </div>
-            <div class="project-info">
-                <span class="label">当前进展</span>
-                <span>已创建长期想法追踪HTML页面</span>
-                <span class="label">目标</span>
-                <span>创建可视化的个人记忆追踪系统</span>
-            </div>
-            <div class="project-notes">
-                💡 <strong>未来想法</strong>：可扩展到其他记忆可视化功能（待补充）
-            </div>
-        </div>
-
-        <!-- 统计 -->
-        <div class="progress-section">
-            <h2>📈 项目统计</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">总项目数</div>
+        <div class="projects">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">🃏 心理学漫画卡片</div>
+                    <span class="status status-paused">暂停</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">进行中</div>
+                <div class="project-info">
+                    <strong>进展：</strong>已提炼25张md卡片，图片生成效果不满意已删除
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">已暂停</div>
+                <div class="project-info">
+                    <strong>位置：</strong>./暂停实验室课程/心理学漫画卡片/
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">已完成</div>
+                <div class="project-note">
+                    💡 下一步：调整图片风格或换其他方案
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>最后更新：2026年4月9日 | 由家玮维护</p>
-            <p style="margin-top: 8px;">跟我说"添加长期想法"来记录新项目</p>
+            <p>最后更新：2026年4月9日</p>
         </footer>
     </div>
 </body>
