@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - bbsqq</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.7;
+            padding: 60px 24px;
+        }
+        .container { max-width: 680px; margin: 0 auto; }
+        header { margin-bottom: 48px; }
+        .back {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        .back:hover { color: #333; }
+        .title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .subtitle {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .section {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+        .trait-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 24px;
+        }
+        .trait-item {
+            font-size: 0.9rem;
+        }
+        .trait-item .label {
+            color: #888;
+            font-size: 0.8rem;
+        }
+        .trait-item .value {
+            color: #333;
+            margin-top: 2px;
+        }
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: #f5f5f5;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .quote {
+            font-style: italic;
+            color: #666;
+            padding-left: 16px;
+            border-left: 3px solid #e5e5e5;
+            margin: 12px 0;
+        }
+        .current-focus {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .current-focus li {
+            margin-bottom: 8px;
+        }
+        footer {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back">← 返回</a>
+            <h1 class="title">关于我</h1>
+            <p class="subtitle">不是简历，而是我是什么样的人</p>
+        </header>
+
+        <div class="section">
+            <div class="section-title">性格底色</div>
+            <div class="trait-grid">
+                <div class="trait-item">
+                    <div class="label">原型</div>
+                    <div class="value">架构师 Architect</div>
+                </div>
+                <div class="trait-item">
+                    <div class="label">核心驱力</div>
+                    <div class="value">掌控感 (8/10)</div>
+                </div>
+                <div class="trait-item">
+                    <div class="label">思考方式</div>
+                    <div class="value">清单型选手</div>
+                </div>
+                <div class="trait-item">
+                    <div class="label">对话偏好</div>
+                    <div class="value">有深度、有判断</div>
+                </div>
+            </div>
+            <div class="quote">
+                "在稳固的地基上构建卓越"
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">兴趣关注</div>
+            <div class="interests">
+                <span class="tag">心理学 / 自我成长</span>
+                <span class="tag">AI 工具实践</span>
+                <span class="tag">编程 / 技术探索</span>
+                <span class="tag">知识管理</span>
+                <span class="tag">效率提升</span>
+                <span class="tag">内心觉察</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">价值观</div>
+            <div class="quote">
+                "有得必有失"的权衡思维
+            </div>
+            <div class="quote">
+                "每个人有自己的功课"的接纳态度
+            </div>
+            <div class="quote">
+                对关系不抱有确定性的幻想
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">当前状态</div>
+            <ul class="current-focus">
+                <li>大厂工作，在 AI 替代的焦虑中保持探索</li>
+                <li>学习暂停实验室课程，建立自我觉察体系</li>
+                <li>探索小红书 / 播客等表达方式</li>
+                <li>思考如何把零散的想法变成可追踪的体系</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title">正在探索</div>
+            <ul class="current-focus">
+                <li>Claude Code、AI 编程工具的深度使用</li>
+                <li>个人记忆可视化系统</li>
+                <li>小红书 IP 方向（AI 编程实操 / 大厂生存日记）</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>最后更新：2026年4月9日</p>
+        </footer>
+    </div>
+</body>
+</html>
