@@ -3,96 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bbsqq 的记忆</title>
+    <title>bbsqq</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #fafafa;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            min-height: 100vh;
+            color: #fff;
             line-height: 1.6;
-            padding: 60px 24px;
+            overflow-x: hidden;
         }
-        .container { max-width: 680px; margin: 0 auto; }
-        header { margin-bottom: 60px; }
-        .title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
         }
-        .subtitle {
-            font-size: 0.95rem;
-            color: #666;
+        .glow-1 {
+            top: -200px;
+            right: -100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
-        .modules {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .glow-2 {
+            bottom: -200px;
+            left: -100px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
         }
-        .module-link {
-            display: block;
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 100px;
+            padding-top: 40px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 24px;
+            padding: 8px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 20px;
             text-decoration: none;
             color: inherit;
-            transition: all 0.15s ease;
+            display: block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .module-link:hover {
-            border-color: #999;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
         }
-        .module-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 6px;
+
+        .glass-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
-        .module-desc {
-            font-size: 0.875rem;
-            color: #888;
-        }
-        .module-meta {
-            margin-top: 12px;
-            font-size: 0.8rem;
-            color: #aaa;
+
+        .card-header {
             display: flex;
-            gap: 16px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
         }
-        footer {
-            margin-top: 80px;
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .card-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover .card-arrow {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 24px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            margin: 60px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px; }
+            .hero { margin-bottom: 60px; }
+            .glass-card { padding: 24px; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
     <div class="container">
-        <header>
-            <h1 class="title">记忆</h1>
-            <p class="subtitle">我的人生系统</p>
-        </header>
+        <section class="hero">
+            <div class="hero-label">Personal Memory System</div>
+            <h1 class="hero-title">记忆</h1>
+            <p class="hero-subtitle">把零散的想法，变成可追踪的体系</p>
+        </section>
 
-        <div class="modules">
-            <a href="关于我.html" class="module-link">
-                <div class="module-title">关于我</div>
-                <div class="module-desc">我是什么样的人，我对什么感兴趣</div>
-            </a>
+        <a href="关于我.html" class="glass-card">
+            <div class="card-header">
+                <span class="card-title">✦ 关于我</span>
+                <span class="card-arrow">→</span>
+            </div>
+            <div class="card-desc">我是什么样的人，我对什么感兴趣</div>
+        </a>
 
-            <a href="长期想法追踪.html" class="module-link">
-                <div class="module-title">长期想法</div>
-                <div class="module-desc">尝试中的事，记录过程直到找到答案</div>
-                <div class="module-meta">
-                    <span>1 个项目</span>
-                    <span>0 进行中</span>
-                </div>
-            </a>
-        </div>
+        <a href="长期想法追踪.html" class="glass-card">
+            <div class="card-header">
+                <span class="card-title">◎ 长期想法</span>
+                <span class="card-arrow">→</span>
+            </div>
+            <div class="card-desc">尝试中的事，记录过程直到找到答案</div>
+            <div class="card-meta">
+                <span>1 个项目</span>
+                <span>0 进行中</span>
+            </div>
+        </a>
+
+        <div class="divider"></div>
 
         <footer>
-            <p>by bbsqq · 维护: 家玮</p>
+            <p class="footer-text">by bbsqq · maintained by 家玮</p>
         </footer>
     </div>
 </body>

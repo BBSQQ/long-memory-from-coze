@@ -6,145 +6,244 @@
     <title>关于我 - bbsqq</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #fafafa;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            min-height: 100vh;
+            color: #fff;
             line-height: 1.7;
-            padding: 60px 24px;
         }
-        .container { max-width: 680px; margin: 0 auto; }
-        header { margin-bottom: 48px; }
-        .back {
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-1 {
+            top: -200px;
+            right: -100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .glow-2 {
+            bottom: -200px;
+            left: -100px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.85rem;
-            color: #888;
+            color: rgba(255,255,255,0.4);
             text-decoration: none;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-section {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+
+        .section-label {
             display: inline-block;
-            margin-bottom: 16px;
-        }
-        .back:hover { color: #333; }
-        .title {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-        }
-        .subtitle {
-            font-size: 0.95rem;
-            color: #666;
-        }
-        .section {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
             margin-bottom: 20px;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
         }
-        .section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #888;
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .trait-item {
+            padding: 16px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 16px;
+        }
+
+        .trait-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 16px;
         }
-        .trait-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px 24px;
+
+        .trait-value {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.9);
         }
-        .trait-item {
-            font-size: 0.9rem;
+
+        .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            position: relative;
+            padding: 30px;
         }
-        .trait-item .label {
-            color: #888;
-            font-size: 0.8rem;
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.05);
+            font-family: Georgia, serif;
         }
-        .trait-item .value {
-            color: #333;
-            margin-top: 2px;
-        }
+
         .interests {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 12px;
         }
-        .tag {
-            background: #f5f5f5;
-            padding: 6px 14px;
-            border-radius: 16px;
+
+        .interest-tag {
+            background: rgba(255,255,255,0.05);
+            padding: 10px 20px;
+            border-radius: 100px;
             font-size: 0.85rem;
-            color: #555;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
         }
-        .quote {
-            font-style: italic;
-            color: #666;
-            padding-left: 16px;
-            border-left: 3px solid #e5e5e5;
-            margin: 12px 0;
+
+        .interest-tag:hover {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
         }
-        .current-focus {
-            font-size: 0.9rem;
-            color: #555;
+
+        .status-list {
+            list-style: none;
         }
-        .current-focus li {
-            margin-bottom: 8px;
+
+        .status-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
+
+        .status-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status-list li::before {
+            content: '●';
+            color: rgba(255,255,255,0.3);
+            font-size: 0.5rem;
+            margin-top: 6px;
+        }
+
         footer {
-            margin-top: 60px;
+            text-align: center;
+            padding: 60px 0 40px;
             font-size: 0.8rem;
-            color: #aaa;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px; }
+            .glass-section { padding: 24px; }
+            .traits-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html" class="back">← 返回</a>
-            <h1 class="title">关于我</h1>
-            <p class="subtitle">不是简历，而是我是什么样的人</p>
-        </header>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
 
-        <div class="section">
-            <div class="section-title">性格底色</div>
-            <div class="trait-grid">
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回</a>
+        
+        <h1 class="page-title">关于我</h1>
+
+        <div class="glass-section">
+            <div class="section-label">性格底色</div>
+            <div class="traits-grid">
                 <div class="trait-item">
-                    <div class="label">原型</div>
-                    <div class="value">架构师 Architect</div>
+                    <div class="trait-label">原型</div>
+                    <div class="trait-value">架构师 Architect</div>
                 </div>
                 <div class="trait-item">
-                    <div class="label">核心驱力</div>
-                    <div class="value">掌控感 (8/10)</div>
+                    <div class="trait-label">核心驱力</div>
+                    <div class="trait-value">掌控感 (8/10)</div>
                 </div>
                 <div class="trait-item">
-                    <div class="label">思考方式</div>
-                    <div class="value">清单型选手</div>
+                    <div class="trait-label">思考方式</div>
+                    <div class="trait-value">清单型选手</div>
                 </div>
                 <div class="trait-item">
-                    <div class="label">对话偏好</div>
-                    <div class="value">有深度、有判断</div>
+                    <div class="trait-label">对话偏好</div>
+                    <div class="trait-value">有深度、有判断</div>
                 </div>
             </div>
-            <div class="quote">
+            <div class="quote" style="margin-top: 30px;">
                 "在稳固的地基上构建卓越"
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">兴趣关注</div>
+        <div class="glass-section">
+            <div class="section-label">兴趣关注</div>
             <div class="interests">
-                <span class="tag">心理学 / 自我成长</span>
-                <span class="tag">AI 工具实践</span>
-                <span class="tag">编程 / 技术探索</span>
-                <span class="tag">知识管理</span>
-                <span class="tag">效率提升</span>
-                <span class="tag">内心觉察</span>
+                <span class="interest-tag">心理学 / 自我成长</span>
+                <span class="interest-tag">AI 工具实践</span>
+                <span class="interest-tag">编程 / 技术探索</span>
+                <span class="interest-tag">知识管理</span>
+                <span class="interest-tag">效率提升</span>
+                <span class="interest-tag">内心觉察</span>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">价值观</div>
+        <div class="glass-section">
+            <div class="section-label">价值观</div>
             <div class="quote">
                 "有得必有失"的权衡思维
             </div>
@@ -156,9 +255,9 @@
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">当前状态</div>
-            <ul class="current-focus">
+        <div class="glass-section">
+            <div class="section-label">当前状态</div>
+            <ul class="status-list">
                 <li>大厂工作，在 AI 替代的焦虑中保持探索</li>
                 <li>学习暂停实验室课程，建立自我觉察体系</li>
                 <li>探索小红书 / 播客等表达方式</li>
@@ -166,9 +265,9 @@
             </ul>
         </div>
 
-        <div class="section">
-            <div class="section-title">正在探索</div>
-            <ul class="current-focus">
+        <div class="glass-section">
+            <div class="section-label">正在探索</div>
+            <ul class="status-list">
                 <li>Claude Code、AI 编程工具的深度使用</li>
                 <li>个人记忆可视化系统</li>
                 <li>小红书 IP 方向（AI 编程实操 / 大厂生存日记）</li>
