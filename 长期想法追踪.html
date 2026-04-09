@@ -3,256 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>长期想法 - bbsqq</title>
+    <title>长期想法 - 数字生命</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0a0a0a;
             min-height: 100vh;
             color: #fff;
-            line-height: 1.6;
-        }
-
-        .bg-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .glow-1 {
-            top: -200px;
-            right: -100px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
-        .glow-2 {
-            bottom: -200px;
-            left: -100px;
-            background: linear-gradient(135deg, #f093fb, #f5576c);
+            line-height: 1.7;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 80px 24px;
-            position: relative;
-            z-index: 1;
+            padding: 80px 32px;
         }
 
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             color: rgba(255,255,255,0.4);
             text-decoration: none;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
+            margin-bottom: 60px;
+            transition: color 0.3s ease;
         }
 
         .back-link:hover {
             color: rgba(255,255,255,0.7);
         }
 
-        .page-title {
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 200;
-            letter-spacing: -0.03em;
+        .page-header {
             margin-bottom: 60px;
-            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        }
+
+        .page-number {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.4);
+            font-weight: 300;
         }
 
         .hint {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 24px 32px;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 40px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.35);
+            padding: 20px 24px;
+            background: rgba(255,255,255,0.02);
+            margin-bottom: 60px;
+            border-left: 1px solid rgba(255,255,255,0.08);
         }
 
         .project-card {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 24px;
+            margin-bottom: 48px;
             padding: 40px;
-            margin-bottom: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 24px;
+            align-items: baseline;
+            margin-bottom: 20px;
         }
 
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: -0.01em;
         }
 
         .status-badge {
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-        }
-
-        .status-paused {
-            background: rgba(184, 134, 11, 0.15);
-            color: #b8860b;
-            border: 1px solid rgba(184, 134, 11, 0.2);
-        }
-
-        .status-active {
-            background: rgba(45, 125, 45, 0.15);
-            color: #2d7d2d;
-            border: 1px solid rgba(45, 125, 45, 0.2);
-        }
-
-        .status-done {
-            background: rgba(51, 102, 204, 0.15);
-            color: #3366cc;
-            border: 1px solid rgba(51, 102, 204, 0.2);
+            color: rgba(255,255,255,0.4);
         }
 
         .project-goal {
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 20px;
-            line-height: 1.7;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            margin-bottom: 32px;
         }
 
         .process-section {
-            margin-top: 32px;
             padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
 
-        .process-title {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.4);
+        .process-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 20px;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 24px;
         }
 
         .process-item {
-            padding: 20px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 16px;
-            margin-bottom: 16px;
-            border-left: 2px solid rgba(255,255,255,0.1);
+            margin-bottom: 24px;
+            padding-left: 24px;
+            border-left: 1px solid rgba(255,255,255,0.06);
         }
 
         .process-date {
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 8px;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 12px;
         }
 
         .process-content {
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.55);
+            font-weight: 300;
             margin-bottom: 8px;
-            line-height: 1.6;
         }
 
-        .process-result {
+        .process-meta {
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .process-learned {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
+            font-weight: 300;
         }
 
         .next-step {
-            margin-top: 20px;
-            padding: 16px 24px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
+            margin-top: 24px;
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.02);
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
-
-        .next-step strong {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
         }
 
         footer {
-            text-align: center;
-            padding: 60px 0 40px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
             letter-spacing: 0.05em;
         }
 
         @media (max-width: 640px) {
-            .container { padding: 40px 16px; }
+            .container { padding: 60px 20px; }
             .project-card { padding: 24px; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-
     <div class="container">
         <a href="index.html" class="back-link">← 返回</a>
         
-        <h1 class="page-title">长期想法</h1>
+        <div class="page-header">
+            <div class="page-number">02</div>
+            <h1 class="page-title">长期想法</h1>
+            <p class="page-subtitle">在探索中的方向，记录过程直到找到答案</p>
+        </div>
 
         <div class="hint">
-            💡 这里记录想做、尝试过一些方法、但还没达成预期效果的事。重点是「过程」——尝试了什么、效果如何、学到了什么。
+            记录想做、尝试过一些方法、但还没达成预期效果的事。重点是「过程」——尝试了什么、效果如何、学到了什么。
         </div>
 
         <div class="project-card">
             <div class="project-header">
-                <span class="project-title">🃏 心理学漫画卡片</span>
-                <span class="status-badge status-paused">暂停</span>
+                <span class="project-title">心理学漫画卡片</span>
+                <span class="status-badge">暂停</span>
             </div>
             <div class="project-goal">
                 把暂停实验室课程核心知识点做成扑克牌大小的卡片，可打印随身携带
             </div>
 
             <div class="process-section">
-                <div class="process-title">尝试记录</div>
+                <div class="process-label">尝试记录</div>
                 
                 <div class="process-item">
                     <div class="process-date">2026-04-09 · 第一次尝试</div>
                     <div class="process-content">从课程提炼25张md卡片，用 image_generate 生成图片</div>
-                    <div class="process-result"><strong>结果：</strong>图片生成效果不满意，AI味儿太重，猫咪元素过多</div>
-                    <div class="process-learned"><strong>学到：</strong>需要更精准的prompt，或者换其他生成方案</div>
+                    <div class="process-meta"><strong>结果：</strong>图片生成效果不满意，AI味儿太重，猫咪元素过多</div>
+                    <div class="process-meta"><strong>学到：</strong>需要更精准的prompt，或者换其他生成方案</div>
                 </div>
             </div>
 
@@ -261,9 +207,7 @@
             </div>
         </div>
 
-        <footer>
-            <p>最后更新：2026年4月9日</p>
-        </footer>
+        <footer>最后更新：2026年4月9日</footer>
     </div>
 </body>
 </html>
