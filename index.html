@@ -1,185 +1,296 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字生命</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #0a0a0a;
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-        }
+<!DOCTYPE html><html lang="zh-CN"><head><!-- WebPro SDK -->
+<script>
+(function(n,e,r,t,a,o,s,i,c,l,f,m,p,u){o="precollect";s="getAttribute";i="addEventListener";c="PerformanceObserver";l=function(e){f=[].slice.call(arguments);f.push(Date.now(),location.href);(e==o?l.p.a:l.q).push(f)};l.q=[];l.p={a:[]};n[a]=l;m=document.createElement("script");m.src=r+"?aid="+t+"&globalName="+a;m.crossOrigin="anonymous";e.getElementsByTagName("head")[0].appendChild(m);if(i in n){l.pcErr=function(e){e=e||n.event;p=e.target||e.srcElement;if(p instanceof Element||p instanceof HTMLElement){n[a](o,"st",{tagName:p.tagName,url:p[s]("href")||p[s]("src")})}else{n[a](o,"err",e.error||e.message)}};l.pcRej=function(e){e=e||n.event;n[a](o,"reject",e.reason||e.detail&&e.detail.reason)};n[i]("error",l.pcErr,true);n[i]("unhandledrejection",l.pcRej,true)}if("PerformanceLongTaskTiming"in n){u=l.pp={entries:[]};u.observer=new PerformanceObserver(function(e){u.entries=u.entries.concat(e.getEntries())});u.observer.observe({entryTypes:["longtask"]})}})(window,document,"https://apm.volccdn.com/mars-web/apmplus/web/browser.cn.js",1001891,"apmPlus");
+</script>
+<script>
+window.apmPlus("context.set", "project_id", "7626965288428453922");
+window.apmPlus("init",{
+  aid: 1001891,
+  token: '26a8704bd4d34b1698085c787d0c95d0'
+});
+window.apmPlus("start");
+</script>
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 120px 32px 60px;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 120px;
-            padding: 100px 0;
-        }
-
-        .hero-label {
-            font-size: 0.7rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 32px;
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 7vw, 4.5rem);
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            margin-bottom: 24px;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.5);
-            font-weight: 300;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-
-        .modules {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-            margin-bottom: 80px;
-        }
-
-        .module-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 48px 40px;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .module-card:hover {
-            background: rgba(255,255,255,0.04);
-            border-color: rgba(255,255,255,0.1);
-        }
-
-        .module-number {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
-            margin-bottom: 24px;
-        }
-
-        .module-title {
-            font-size: 1.6rem;
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            margin-bottom: 16px;
-        }
-
-        .module-desc {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.4);
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            padding: 60px 0;
-            margin-bottom: 80px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 200;
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.25);
-            letter-spacing: 0.1em;
-        }
-
-        @media (max-width: 768px) {
-            .container { padding: 80px 20px 40px; }
-            .hero { margin-bottom: 80px; padding: 60px 0; }
-            .modules { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr; gap: 40px; }
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>数字生命 · 赛博永生</title>
+  <link rel="preconnect" href="https://fonts.googleapis.cn"/>
+  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin=""/>
+  <link href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div class="container">
-        <section class="hero">
-            <div class="hero-label">Digital Life System</div>
-            <h1 class="hero-title">数字生命</h1>
-            <p class="hero-subtitle">将意识上传至云端，让记忆得以永续</p>
-        </section>
-
-        <div class="modules">
-            <a href="关于我.html" class="module-card">
-                <div class="module-number">01</div>
-                <div class="module-title">关于我</div>
-                <div class="module-desc">身份档案 · 性格底色 · 价值内核</div>
-            </a>
-
-            <a href="长期想法追踪.html" class="module-card">
-                <div class="module-number">02</div>
-                <div class="module-title">长期想法</div>
-                <div class="module-desc">在探索中的方向，记录过程直到找到答案</div>
-            </a>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">01</div>
-                <div class="stat-label">追踪项</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">00</div>
-                <div class="stat-label">进行中</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">01</div>
-                <div class="stat-label">已暂停</div>
-            </div>
-        </div>
-
-        <footer>
-            uploaded by bbsqq · maintained by 家玮
-        </footer>
+  <!-- 背景效果 -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  
+  <!-- 导航栏 -->
+  <nav class="cyber-nav" id="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">DIGITAL_LIFE</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="切换导航">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">关于我</a></li>
+        <li><a href="#thinking" class="nav-link" data-i18n="nav.thinking">想法追踪</a></li>
+        <li><a href="#career" class="nav-link" data-i18n="nav.career">职业轨迹</a></li>
+        <li><a href="#learning" class="nav-link" data-i18n="nav.learning">学习探索</a></li>
+      </ul>
     </div>
-</body>
-</html>
+  </nav>
+
+  <!-- 主内容 -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-cn">数字生命</span>
+          <span class="title-divider">·</span>
+          <span class="title-en">CYBER IMMORTALITY</span>
+        </h1>
+        <p class="hero-subtitle" id="heroSubtitle">在代码与数据的边界，书写永恒</p>
+        <div class="hero-meta">
+          <span class="meta-item">
+            <span class="meta-label">NODE_ID:</span>
+            <span class="meta-value" id="nodeId">NEO_001</span>
+          </span>
+          <span class="meta-item">
+            <span class="meta-label">UPTIME:</span>
+            <span class="meta-value" id="uptime">00:00:00</span>
+          </span>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- 关于我 Section -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <header class="section-header">
+          <span class="section-tag">01</span>
+          <h2 class="section-title">关于我</h2>
+          <span class="section-line"></span>
+        </header>
+        
+        <div class="about-grid">
+          <!-- 个人信息卡片 -->
+          <div class="profile-card">
+            <div class="profile-visual">
+              <div class="avatar-container">
+                <svg class="avatar-svg" viewBox="0 0 200 200">
+                  <defs>
+                    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1"></stop>
+                      <stop offset="100%" style="stop-color:#7b2dff;stop-opacity:1"></stop>
+                    </linearGradient>
+                    <filter id="glow">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"></feGaussianBlur>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#avatarGradient)" stroke-width="2" filter="url(#glow)"></circle>
+                  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#avatarGradient)" stroke-width="1" opacity="0.5"></circle>
+                  <text x="100" y="105" text-anchor="middle" fill="url(#avatarGradient)" font-size="48" font-weight="bold">N</text>
+                  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#avatarGradient)" stroke-width="1" stroke-dasharray="5,5" class="rotate-slow"></circle>
+                </svg>
+              </div>
+            </div>
+            <div class="profile-info">
+              <h3 class="profile-name" id="profileName">Neo</h3>
+              <p class="profile-tagline" id="profileTagline">在代码与数据的边界，书写永恒</p>
+              <div class="profile-status">
+                <span class="status-indicator active"></span>
+                <span class="status-label" id="currentStatus">深度学习中，寻找下一个突破点</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 心理特征 -->
+          <div class="info-card psychology-card">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              心理特征
+            </h4>
+            <ul class="trait-list" id="psychologyList"></ul>
+          </div>
+
+          <!-- 兴趣关注 -->
+          <div class="info-card interests-card">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              兴趣关注
+            </h4>
+            <div class="interest-tags" id="interestsList"></div>
+          </div>
+
+          <!-- 价值观 -->
+          <div class="info-card values-card">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+              核心价值观
+            </h4>
+            <div class="values-grid" id="valuesList"></div>
+          </div>
+
+          <!-- 当前状态 -->
+          <div class="info-card status-card">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+              系统状态
+            </h4>
+            <div class="status-metrics">
+              <div class="metric-item">
+                <span class="metric-label">情绪状态</span>
+                <span class="metric-value" id="moodValue">专注</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">能量指数</span>
+                <div class="energy-bar">
+                  <div class="energy-fill" id="energyFill" style="width: 78%"></div>
+                </div>
+                <span class="metric-value"><span id="energyValue">78</span>%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 长期想法追踪 Section -->
+    <section class="section thinking-section" id="thinking">
+      <div class="section-container">
+        <header class="section-header">
+          <span class="section-tag">02</span>
+          <h2 class="section-title">长期想法追踪</h2>
+          <span class="section-line"></span>
+        </header>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="in_progress">进行中</button>
+          <button class="filter-btn" data-filter="paused">已暂停</button>
+          <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+
+        <div class="thinking-grid" id="thinkingGrid"></div>
+      </div>
+    </section>
+
+    <!-- 职业轨迹 Section -->
+    <section class="section career-section" id="career">
+      <div class="section-container">
+        <header class="section-header">
+          <span class="section-tag">03</span>
+          <h2 class="section-title">职业轨迹</h2>
+          <span class="section-line"></span>
+        </header>
+
+        <div class="timeline" id="careerTimeline"></div>
+      </div>
+    </section>
+
+    <!-- 学习探索 Section -->
+    <section class="section learning-section" id="learning">
+      <div class="section-container">
+        <header class="section-header">
+          <span class="section-tag">04</span>
+          <h2 class="section-title">学习探索</h2>
+          <span class="section-line"></span>
+        </header>
+
+        <div class="learning-grid">
+          <!-- 正在学习 -->
+          <div class="learning-card current-learning">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              正在学习
+            </h4>
+            <div class="learning-items" id="learningItems"></div>
+          </div>
+
+          <!-- 成长路径 -->
+          <div class="learning-card growth-path">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              成长路径
+            </h4>
+            <div class="path-timeline" id="growthPath"></div>
+          </div>
+
+          <!-- 技能雷达 -->
+          <div class="learning-card skills-card">
+            <h4 class="card-title">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              技能图谱
+            </h4>
+            <div class="skills-container" id="skillsContainer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        <span class="footer-bracket">[</span>
+        <span class="footer-info">BUILT WITH CODE &amp; DREAMS</span>
+        <span class="footer-bracket">]</span>
+      </div>
+      <div class="footer-meta">
+        <span id="footerYear">2024</span>
+        <span class="footer-divider">//</span>
+        <span>DIGITAL_LIFE_v1.0</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 加载动画 -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader">
+      <div class="loader-ring"></div>
+      <span class="loader-text">INITIALIZING...</span>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+
+
+</body></html>
