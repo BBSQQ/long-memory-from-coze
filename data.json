@@ -2,204 +2,219 @@
   "meta": {
     "title": "数字生命 · 赛博永生",
     "subtitle": "Digital Life · Cyber Immortality",
-    "version": "v1.1.0"
+    "version": "v1.0.0"
   },
   "about": {
-    "name": "小曦",
-    "tagline": "在代码与生活的边界，探索自我",
+    "name": "Neo",
+    "avatar": "/assets/avatar.svg",
+    "tagline": "在代码与数据的边界，书写永恒",
     "psychology": [
-      { "trait": "架构师型", "description": "在稳固的地基上构建卓越，掌控感是最强驱力" },
-      { "trait": "清单型选手", "description": "完成划掉带来安全感，收拾整理带来治愈感" },
-      { "trait": "内向沉思者", "description": "需要主动维护关系，重视深度多于广度" }
+      { "trait": "理性驱动", "description": "偏好逻辑分析，但不失人文关怀" },
+      { "trait": "好奇心极客", "description": "对未知领域保持持续探索欲" },
+      { "trait": "内向沉思者", "description": "在独处中寻找创造力的源泉" }
     ],
     "interests": [
-      "用AI做小工具创造",
-      "心理学与正念练习",
-      "收纳整理",
-      "户外跑步散步",
-      "阅读与播客"
+      "人工智能与机器学习",
+      "人机交互设计",
+      "科幻文学与影视",
+      "数字艺术创作",
+      "哲学与认知科学"
     ],
     "values": [
-      { "core": "生命体验", "description": "生命体验 > 职业成功" },
-      { "core": "自主", "description": "想要自驱而非被约束" },
-      { "core": "深度关系", "description": "深度关系 > 广泛社交" },
-      { "core": "创造力", "description": "创造力 > 执行力" }
+      { "core": "创造", "description": "用代码构建可能性的边界" },
+      { "core": "真实", "description": "追求本质，不为表象所困" },
+      { "core": "连接", "description": "让技术服务于人的情感与需求" }
     ],
     "status": {
-      "current": "AI时代职业转型期，全栈转型中",
-      "mood": "有焦虑但积极应对",
-      "energy": 70
+      "current": "深度学习中，寻找下一个突破点",
+      "mood": "专注",
+      "energy": 78
     }
   },
   "longTermThinking": [
     {
       "id": 1,
-      "title": "AI时代职业转型路径",
-      "description": "从数据分析业务到Agent研发平台，探索双发展路径",
+      "title": "构建个人AI助手生态系统",
+      "description": "打造一个能够持续学习、自我进化的个人AI系统，整合知识管理、决策辅助、创意激发等多维度能力",
       "status": "in_progress",
-      "progress": 40,
-      "startDate": "2024",
-      "tags": ["AI", "职业发展", "全栈"],
+      "progress": 45,
+      "startDate": "2024-01",
+      "tags": ["AI", "Personal Growth", "Productivity"],
       "milestones": [
-        { "done": "完成百宝箱企业版AI卡片体系建设", "completed": true },
-        { "done": "OpsClaw智能运维工作台全栈实践", "completed": true },
-        { "done": "Java后端技能习得", "completed": false },
-        { "done": "Agent研发平台方向探索", "completed": false }
+        { "done": "建立知识图谱框架", "completed": true },
+        { "done": "实现基础对话引擎", "completed": true },
+        { "done": "集成多模态理解", "completed": false },
+        { "done": "实现主动学习机制", "completed": false },
+        { "done": "构建记忆持久层", "completed": false }
       ]
     },
     {
       "id": 2,
-      "title": "精力管理系统化",
-      "description": "从耗竭中恢复，建立可持续的工作生活节奏",
+      "title": "数字遗产整理计划",
+      "description": "系统性地整理个人数字资产：文章、代码、笔记、设计作品，建立可传承的数字化记忆库",
       "status": "in_progress",
-      "progress": 60,
-      "startDate": "2023",
-      "tags": ["健康", "正念", "自我管理"],
+      "progress": 30,
+      "startDate": "2024-03",
+      "tags": ["Digital Legacy", "Organization"],
       "milestones": [
-        { "done": "正念练习习惯建立（1年+）", "completed": true },
-        { "done": "CBT认知行为疗法学习", "completed": true },
-        { "done": "私教健身习惯（近一年）", "completed": true },
-        { "done": "睡眠质量改善", "completed": false },
-        { "done": "体脂率控制", "completed": false }
+        { "done": "定义数字资产分类体系", "completed": true },
+        { "done": "迁移历史数据", "completed": false },
+        { "done": "建立索引与检索", "completed": false },
+        { "done": "可视化呈现", "completed": false }
       ]
     },
     {
       "id": 3,
-      "title": "与父母关系的边界",
-      "description": "找到既保持距离又能维持情感连接的方式",
-      "status": "in_progress",
-      "progress": 50,
-      "startDate": "2024",
-      "tags": ["家庭", "情感", "成长"],
+      "title": "赛博格身体改造实验",
+      "description": "探索人体增强技术：AR眼镜、外骨骼、智能植入物的可能性与伦理边界",
+      "status": "paused",
+      "progress": 15,
+      "startDate": "2023-06",
+      "tags": ["Cyborg", "Biohacking", "Future Tech"],
       "milestones": [
-        { "done": "接纳\"父母有他们的功课\"", "completed": true },
-        { "done": "减少通话后的情绪消耗", "completed": false },
-        { "done": "建立健康的沟通边界", "completed": false }
+        { "done": "AR眼镜日常化测试", "completed": true },
+        { "done": "生物反馈设备调研", "completed": true },
+        { "done": "神经接口技术跟踪", "completed": false },
+        { "done": "伦理框架构建", "completed": false }
       ]
     },
     {
       "id": 4,
-      "title": "善意与理性判断的平衡",
-      "description": "在\"理性判断\"和\"善意行动\"之间找到平衡点",
-      "status": "in_progress",
-      "progress": 30,
-      "startDate": "2026-04",
-      "tags": ["价值观", "成长", "道德"],
+      "title": "虚拟身份与数字分身",
+      "description": "创建自己在虚拟世界的永久存在形式，包括AI化身、数字艺术品、NFT身份标识",
+      "status": "completed",
+      "progress": 100,
+      "startDate": "2022-09",
+      "endDate": "2024-02",
+      "tags": ["Digital Identity", "NFT", "Avatar"],
       "milestones": [
-        { "done": "觉察到这个拉扯的存在", "completed": true },
-        { "done": "在实践中探索平衡点", "completed": false }
+        { "done": "3D虚拟形象设计", "completed": true },
+        { "done": "AI对话能力集成", "completed": true },
+        { "done": "社交平台同步", "completed": true },
+        { "done": "持续进化迭代", "completed": true }
       ]
     },
     {
       "id": 5,
-      "title": "AI对社会结构的长远影响",
-      "description": "从社会经济/政治体系层面思考AI影响，关注\"80%人无法获得生活保障时社会稳定如何维持\"",
+      "title": "脑机接口学习曲线",
+      "description": "深入研究脑机接口技术，从理论到实践，为未来的神经增强做准备",
       "status": "in_progress",
       "progress": 20,
-      "startDate": "2026-04",
-      "tags": ["AI", "社会", "思考"],
+      "startDate": "2024-06",
+      "tags": ["BCI", "Neuroscience", "Learning"],
       "milestones": [
-        { "done": "跳出\"AI提升创造力\"的常见论调", "completed": true },
-        { "done": "识别核心矛盾：AI用全社会数据训练但收益集中", "completed": true },
-        { "done": "持续关注与思考", "completed": false }
+        { "done": "基础知识储备", "completed": true },
+        { "done": "行业前沿追踪", "completed": false },
+        { "done": "实验项目参与", "completed": false },
+        { "done": "技术评估报告", "completed": false }
       ]
     }
   ],
   "career": [
     {
       "id": 1,
-      "period": "2020 - 至今",
-      "title": "前端工程师 / 全栈转型",
-      "company": "蚂蚁集团",
-      "location": "上海/杭州",
-      "description": "增强分析、数据可视化、Copilot、AI应用开发，2023年晋升",
+      "period": "2024 - Present",
+      "title": "AI产品架构师",
+      "company": "Cyber Labs",
+      "location": "虚拟空间",
+      "description": "负责AI驱动的的产品设计与架构，探索人机协作的新范式",
       "achievements": [
-        "自助分析产品（DI）：从点点问问融合到2.0架构重构，Copilot能力建设",
-        "NTV文本可视化：业界领先方案，MAU 2231，服务5个产品9个模块",
-        "百宝箱企业版：AI卡片体系建设，多端支持，商业化落地",
-        "OpsClaw智能运维工作台：全栈项目，AI Coding实践"
+        "设计多模态AI助手架构",
+        "推动神经接口产品化项目",
+        "建立AI伦理审查机制"
       ],
-      "tech": ["React", "TypeScript", "AntV", "Java", "LLM", "RAG"]
+      "tech": ["GPT-4", "LangChain", "Vector DB", "Python"]
     },
     {
       "id": 2,
-      "period": "2018 - 2020",
-      "title": "前端可视化工程师",
-      "company": "上海音智达信息技术",
-      "location": "上海",
-      "description": "参与多个数据可视化项目，主导7个项目",
+      "period": "2021 - 2024",
+      "title": "全栈工程师",
+      "company": "Neural Networks Co.",
+      "location": "数字都市",
+      "description": "专注于AI应用的全栈开发，构建智能化产品与服务",
       "achievements": [
-        "销售报价可视系统、智能分车系统",
-        "动态插画开源项目（同济+蚂蚁合作）",
-        "图之典项目",
-        "ChinaVis 2018数据可视分析挑战赛三等奖"
+        "主导智能推荐系统重构",
+        "实现实时翻译引擎",
+        "开发自动化测试平台"
       ],
-      "tech": ["React", "Vue", "TypeScript", "D3.js", "AntV/G2", "ECharts"]
+      "tech": ["React", "Node.js", "TensorFlow", "Kubernetes"]
     },
     {
       "id": 3,
-      "period": "2014 - 2017",
-      "title": "食品工程硕士",
-      "company": "浙江工商大学",
-      "location": "杭州",
-      "description": "研二接触生物信息学，对编程产生兴趣",
+      "period": "2018 - 2021",
+      "title": "前端开发工程师",
+      "company": "Web3 Ventures",
+      "location": "云端城市",
+      "description": "负责Web应用开发，参与区块链与加密货币相关产品",
       "achievements": [
-        "从食品工程跨专业选择前端方向",
-        "综合自身\"强迫症+技术宅+颜控\"特点确定职业方向"
+        "开发去中心化交易所前端",
+        "实现钱包安全模块",
+        "优化首屏加载性能60%"
       ],
-      "tech": []
+      "tech": ["Vue.js", "TypeScript", "Web3.js", "GraphQL"]
+    },
+    {
+      "id": 4,
+      "period": "2016 - 2018",
+      "title": "创意编程师",
+      "company": "Digital Art Collective",
+      "location": "创意园区",
+      "description": "将代码与艺术结合，创作交互式数字艺术作品",
+      "achievements": [
+        "创作沉浸式数字装置",
+        "举办个人算法艺术展",
+        "开发生成艺术工具包"
+      ],
+      "tech": ["Processing", "p5.js", "Three.js", "GLSL"]
     }
   ],
   "learning": {
     "currentlyLearning": [
       {
         "id": 1,
-        "name": "正念七态度",
-        "description": "初心、非评判、放下、耐心、接纳、信任、不争",
-        "progress": 70,
-        "resources": ["暂停实验室课程"],
+        "name": "大型语言模型微调",
+        "description": "深入理解LLM原理，掌握模型微调技术，训练专属AI",
+        "progress": 65,
+        "resources": ["Hugging Face Course", "OpenAI Fine-tuning Docs"],
         "status": "active"
       },
       {
         "id": 2,
-        "name": "Java后端开发",
-        "description": "全栈转型，2025年起学习",
-        "progress": 40,
-        "resources": ["项目实践"],
+        "name": "神经形态计算",
+        "description": "探索类脑计算架构，理解脉冲神经网络与传统深度学习的差异",
+        "progress": 30,
+        "resources": ["Nature Neuroscience Papers", "Intel Loihi Docs"],
         "status": "active"
       },
       {
         "id": 3,
-        "name": "自我关怀",
-        "description": "在压力下不自我攻击，善待自己",
-        "progress": 50,
-        "resources": ["暂停实验室课程", "正念练习"],
-        "status": "active"
+        "name": "量子机器学习",
+        "description": "了解量子计算基础，探索量子在ML中的应用潜力",
+        "progress": 15,
+        "resources": ["Qiskit Textbook", "Cirq Tutorials"],
+        "status": "learning"
       },
       {
         "id": 4,
-        "name": "积极思维",
-        "description": "三件好事打卡、感恩思维、优势思维、希望思维",
-        "progress": 60,
-        "resources": ["暂停实验室课程"],
+        "name": "生物信息学",
+        "description": "学习基因组数据分析，理解生命的数字编码",
+        "progress": 40,
+        "resources": ["Bioconductor", "NCBI Resources"],
         "status": "active"
       }
     ],
     "growthPath": [
-      { "year": "2017", "milestone": "研究生毕业，考公失败，选择前端方向" },
-      { "year": "2018", "milestone": "转行成功，入职音智达，ChinaVis获奖" },
-      { "year": "2020", "milestone": "入职蚂蚁，开始增强分析领域深耕" },
-      { "year": "2023", "milestone": "晋升，经历职业耗竭后开始正念练习" },
-      { "year": "2024", "milestone": "AI工程化探索，持续正念练习" },
-      { "year": "2025", "milestone": "全栈转型，结婚，乔迁新居" },
-      { "year": "2026", "milestone": "好奇心驱动，探索AI与社会的关系" }
+      { "year": "2016", "milestone": "编程入门 - 开启数字之旅" },
+      { "year": "2018", "milestone": "前端深耕 - 构建交互体验" },
+      { "year": "2020", "milestone": "AI启蒙 - 拥抱机器学习" },
+      { "year": "2022", "milestone": "大模型时代 - 探索AGI边界" },
+      { "year": "2024", "milestone": "数字永生 - 意识上传与延续" }
     ],
     "skills": [
-      { "category": "前端", "items": ["React", "TypeScript", "AntV", "slate.js"] },
-      { "category": "数据可视化", "items": ["D3.js", "G2", "ECharts", "图形语法学"] },
-      { "category": "AI工程", "items": ["Copilot", "LLM", "RAG", "AI Coding"] },
-      { "category": "后端", "items": ["Java"] },
-      { "category": "心理学", "items": ["正念", "CBT", "自我关怀", "积极思维"] }
+      { "category": "AI & ML", "items": ["LLM", "LangChain", "Computer Vision", "NLP"] },
+      { "category": "Frontend", "items": ["React", "Vue", "Three.js", "WebGL"] },
+      { "category": "Backend", "items": ["Node.js", "Python", "PostgreSQL", "Redis"] },
+      { "category": "Tools", "items": ["Docker", "K8s", "Git", "Linux"] }
     ]
   }
 }
