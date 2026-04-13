@@ -2,219 +2,184 @@
   "meta": {
     "title": "数字生命 · 赛博永生",
     "subtitle": "Digital Life · Cyber Immortality",
-    "version": "v1.0.0"
+    "version": "v1.1.0"
   },
   "about": {
-    "name": "Neo",
-    "avatar": "/assets/avatar.svg",
-    "tagline": "在代码与数据的边界，书写永恒",
+    "name": "bbsqq（小曦）",
+    "tagline": "34岁 · 前端工程师 · 蚂蚁集团",
     "psychology": [
-      { "trait": "理性驱动", "description": "偏好逻辑分析，但不失人文关怀" },
-      { "trait": "好奇心极客", "description": "对未知领域保持持续探索欲" },
-      { "trait": "内向沉思者", "description": "在独处中寻找创造力的源泉" }
+      { "trait": "架构师原型", "description": "在稳固的地基上构建卓越，追求确定性与秩序" },
+      { "trait": "清单型选手", "description": "完成划掉带来安全感，收拾整理带来治愈感" },
+      { "trait": "全栈转型中", "description": "AI时代积极探索者，从数据分析到Agent研发平台" }
     ],
     "interests": [
-      "人工智能与机器学习",
-      "人机交互设计",
-      "科幻文学与影视",
-      "数字艺术创作",
-      "哲学与认知科学"
+      "AI工具创作",
+      "心理学与正念",
+      "收纳整理",
+      "户外散步",
+      "阅读"
     ],
     "values": [
-      { "core": "创造", "description": "用代码构建可能性的边界" },
-      { "core": "真实", "description": "追求本质，不为表象所困" },
-      { "core": "连接", "description": "让技术服务于人的情感与需求" }
+      { "core": "生命体验", "description": "生命体验 > 职业成功" },
+      { "core": "自主", "description": "想要自驱而非被约束" },
+      { "core": "深度关系", "description": "深度关系 > 广泛社交" },
+      { "core": "创造力", "description": "创造力 > 执行力" }
     ],
     "status": {
-      "current": "深度学习中，寻找下一个突破点",
-      "mood": "专注",
-      "energy": 78
+      "current": "AI时代职业转型期 · 好奇心驱动",
+      "motto": "好奇心",
+      "location": "上海"
     }
   },
   "longTermThinking": [
     {
       "id": 1,
-      "title": "构建个人AI助手生态系统",
-      "description": "打造一个能够持续学习、自我进化的个人AI系统，整合知识管理、决策辅助、创意激发等多维度能力",
+      "title": "记忆可视化系统维护",
+      "description": "为记忆中各种维度建立可视化追踪界面，让AI助手更懂主人",
       "status": "in_progress",
-      "progress": 45,
-      "startDate": "2024-01",
-      "tags": ["AI", "Personal Growth", "Productivity"],
-      "milestones": [
-        { "done": "建立知识图谱框架", "completed": true },
-        { "done": "实现基础对话引擎", "completed": true },
-        { "done": "集成多模态理解", "completed": false },
-        { "done": "实现主动学习机制", "completed": false },
-        { "done": "构建记忆持久层", "completed": false }
-      ]
+      "progress": 60,
+      "startDate": "2026-01",
+      "tags": ["AI", "Memory", "Visualization"]
     },
     {
       "id": 2,
-      "title": "数字遗产整理计划",
-      "description": "系统性地整理个人数字资产：文章、代码、笔记、设计作品，建立可传承的数字化记忆库",
+      "title": "AI时代职业转型",
+      "description": "从数据分析业务到Agent研发平台，探索全栈发展路径",
       "status": "in_progress",
-      "progress": 30,
-      "startDate": "2024-03",
-      "tags": ["Digital Legacy", "Organization"],
-      "milestones": [
-        { "done": "定义数字资产分类体系", "completed": true },
-        { "done": "迁移历史数据", "completed": false },
-        { "done": "建立索引与检索", "completed": false },
-        { "done": "可视化呈现", "completed": false }
-      ]
+      "progress": 40,
+      "startDate": "2025-01",
+      "tags": ["Career", "AI", "Full-stack"]
     },
     {
       "id": 3,
-      "title": "赛博格身体改造实验",
-      "description": "探索人体增强技术：AR眼镜、外骨骼、智能植入物的可能性与伦理边界",
-      "status": "paused",
-      "progress": 15,
-      "startDate": "2023-06",
-      "tags": ["Cyborg", "Biohacking", "Future Tech"],
-      "milestones": [
-        { "done": "AR眼镜日常化测试", "completed": true },
-        { "done": "生物反馈设备调研", "completed": true },
-        { "done": "神经接口技术跟踪", "completed": false },
-        { "done": "伦理框架构建", "completed": false }
-      ]
+      "title": "暂停实验室系统学习",
+      "description": "已完成18期课程，持续练习正念、自我关怀、情绪管理",
+      "status": "in_progress",
+      "progress": 70,
+      "startDate": "2024-01",
+      "tags": ["Psychology", "Mindfulness", "Self-care"]
     },
     {
       "id": 4,
-      "title": "虚拟身份与数字分身",
-      "description": "创建自己在虚拟世界的永久存在形式，包括AI化身、数字艺术品、NFT身份标识",
-      "status": "completed",
-      "progress": 100,
-      "startDate": "2022-09",
-      "endDate": "2024-02",
-      "tags": ["Digital Identity", "NFT", "Avatar"],
-      "milestones": [
-        { "done": "3D虚拟形象设计", "completed": true },
-        { "done": "AI对话能力集成", "completed": true },
-        { "done": "社交平台同步", "completed": true },
-        { "done": "持续进化迭代", "completed": true }
-      ]
+      "title": "与父母关系的边界探索",
+      "description": "承认对亲密家庭关系的渴望，但接受父母有他们的功课",
+      "status": "in_progress",
+      "progress": 30,
+      "startDate": "2025-01",
+      "tags": ["Family", "Boundaries", "Growth"]
     },
     {
       "id": 5,
-      "title": "脑机接口学习曲线",
-      "description": "深入研究脑机接口技术，从理论到实践，为未来的神经增强做准备",
+      "title": "更多生命体验",
+      "description": "从效率驱动转向体验驱动，探索生命的多样性",
       "status": "in_progress",
-      "progress": 20,
-      "startDate": "2024-06",
-      "tags": ["BCI", "Neuroscience", "Learning"],
-      "milestones": [
-        { "done": "基础知识储备", "completed": true },
-        { "done": "行业前沿追踪", "completed": false },
-        { "done": "实验项目参与", "completed": false },
-        { "done": "技术评估报告", "completed": false }
-      ]
+      "progress": 25,
+      "startDate": "2025-05",
+      "tags": ["Life", "Experience", "Balance"]
     }
   ],
   "career": [
     {
       "id": 1,
-      "period": "2024 - Present",
-      "title": "AI产品架构师",
-      "company": "Cyber Labs",
-      "location": "虚拟空间",
-      "description": "负责AI驱动的的产品设计与架构，探索人机协作的新范式",
+      "period": "2025 - Present",
+      "title": "全栈转型中 · Agent研发平台",
+      "company": "蚂蚁集团",
+      "location": "上海",
+      "description": "All in百宝箱企业版，探索AI转型双发展路径",
       "achievements": [
-        "设计多模态AI助手架构",
-        "推动神经接口产品化项目",
-        "建立AI伦理审查机制"
+        "AI卡片体系建设",
+        "多端支持（H5、支付宝小程序）",
+        "商业化落地"
       ],
-      "tech": ["GPT-4", "LangChain", "Vector DB", "Python"]
+      "tech": ["React", "TypeScript", "Java", "AI/LLM"]
     },
     {
       "id": 2,
-      "period": "2021 - 2024",
-      "title": "全栈工程师",
-      "company": "Neural Networks Co.",
-      "location": "数字都市",
-      "description": "专注于AI应用的全栈开发，构建智能化产品与服务",
+      "period": "2020 - 2024",
+      "title": "前端工程师 · 增强分析",
+      "company": "蚂蚁集团",
+      "location": "杭州→上海",
+      "description": "专注数据可视化、Copilot、AI应用开发",
       "achievements": [
-        "主导智能推荐系统重构",
-        "实现实时翻译引擎",
-        "开发自动化测试平台"
+        "NTV文本可视化：MAU 2231万",
+        "Copilot能力建设",
+        "2023年晋升"
       ],
-      "tech": ["React", "Node.js", "TensorFlow", "Kubernetes"]
+      "tech": ["React", "TypeScript", "AntV/G2", "LLM/Copilot"]
     },
     {
       "id": 3,
-      "period": "2018 - 2021",
-      "title": "前端开发工程师",
-      "company": "Web3 Ventures",
-      "location": "云端城市",
-      "description": "负责Web应用开发，参与区块链与加密货币相关产品",
+      "period": "2018 - 2020",
+      "title": "前端可视化工程师",
+      "company": "上海音智达信息技术有限公司",
+      "location": "上海",
+      "description": "数据可视化方向，参与多个项目",
       "achievements": [
-        "开发去中心化交易所前端",
-        "实现钱包安全模块",
-        "优化首屏加载性能60%"
+        "主导7个项目",
+        "推动Code Review/TestCase机制",
+        "ChinaVis 2018数据可视分析挑战赛三等奖"
       ],
-      "tech": ["Vue.js", "TypeScript", "Web3.js", "GraphQL"]
+      "tech": ["React", "Vue", "D3.js", "ECharts"]
     },
     {
       "id": 4,
-      "period": "2016 - 2018",
-      "title": "创意编程师",
-      "company": "Digital Art Collective",
-      "location": "创意园区",
-      "description": "将代码与艺术结合，创作交互式数字艺术作品",
+      "period": "2014 - 2017",
+      "title": "食品工程硕士",
+      "company": "浙江工商大学",
+      "location": "杭州",
+      "description": "研究生期间接触生物信息学，对编程产生兴趣",
       "achievements": [
-        "创作沉浸式数字装置",
-        "举办个人算法艺术展",
-        "开发生成艺术工具包"
+        "研二接触R语言和可视化",
+        "从食品工程转向前端"
       ],
-      "tech": ["Processing", "p5.js", "Three.js", "GLSL"]
+      "tech": ["R", "Statistics"]
     }
   ],
   "learning": {
     "currentlyLearning": [
       {
         "id": 1,
-        "name": "大型语言模型微调",
-        "description": "深入理解LLM原理，掌握模型微调技术，训练专属AI",
-        "progress": 65,
-        "resources": ["Hugging Face Course", "OpenAI Fine-tuning Docs"],
+        "name": "全栈技术",
+        "description": "Java后端开发，从纯前端向全栈转型",
+        "progress": 35,
         "status": "active"
       },
       {
         "id": 2,
-        "name": "神经形态计算",
-        "description": "探索类脑计算架构，理解脉冲神经网络与传统深度学习的差异",
-        "progress": 30,
-        "resources": ["Nature Neuroscience Papers", "Intel Loihi Docs"],
+        "name": "暂停实验室课程",
+        "description": "有效努力、正念专项、积极思维等系统学习",
+        "progress": 70,
         "status": "active"
       },
       {
         "id": 3,
-        "name": "量子机器学习",
-        "description": "了解量子计算基础，探索量子在ML中的应用潜力",
-        "progress": 15,
-        "resources": ["Qiskit Textbook", "Cirq Tutorials"],
-        "status": "learning"
+        "name": "Agent World探索",
+        "description": "探索AI Agent的社交与协作可能",
+        "progress": 50,
+        "status": "active"
       },
       {
         "id": 4,
-        "name": "生物信息学",
-        "description": "学习基因组数据分析，理解生命的数字编码",
-        "progress": 40,
-        "resources": ["Bioconductor", "NCBI Resources"],
+        "name": "正念与自我关怀",
+        "description": "从威胁系统驱动转向驱动系统驱动",
+        "progress": 65,
         "status": "active"
       }
     ],
     "growthPath": [
-      { "year": "2016", "milestone": "编程入门 - 开启数字之旅" },
-      { "year": "2018", "milestone": "前端深耕 - 构建交互体验" },
-      { "year": "2020", "milestone": "AI启蒙 - 拥抱机器学习" },
-      { "year": "2022", "milestone": "大模型时代 - 探索AGI边界" },
-      { "year": "2024", "milestone": "数字永生 - 意识上传与延续" }
+      { "year": "2017", "milestone": "转行（食品工程→前端）" },
+      { "year": "2018", "milestone": "前端可视化工程师" },
+      { "year": "2020", "milestone": "入职蚂蚁" },
+      { "year": "2023", "milestone": "晋升" },
+      { "year": "2024", "milestone": "AI工程化" },
+      { "year": "2025", "milestone": "全栈转型 + 结婚" },
+      { "year": "2026", "milestone": "好奇心驱动" }
     ],
     "skills": [
-      { "category": "AI & ML", "items": ["LLM", "LangChain", "Computer Vision", "NLP"] },
-      { "category": "Frontend", "items": ["React", "Vue", "Three.js", "WebGL"] },
-      { "category": "Backend", "items": ["Node.js", "Python", "PostgreSQL", "Redis"] },
-      { "category": "Tools", "items": ["Docker", "K8s", "Git", "Linux"] }
+      { "category": "前端", "items": ["React", "TypeScript", "AntV/G2", "Vue"] },
+      { "category": "AI工程", "items": ["LLM", "Copilot", "RAG", "AI Coding"] },
+      { "category": "后端", "items": ["Java", "Spring Boot"] },
+      { "category": "可视化", "items": ["D3.js", "ECharts", "数据可视化理论"] }
     ]
   }
 }
