@@ -1,296 +1,193 @@
-<!DOCTYPE html><html lang="zh-CN"><head><!-- WebPro SDK -->
-<script>
-(function(n,e,r,t,a,o,s,i,c,l,f,m,p,u){o="precollect";s="getAttribute";i="addEventListener";c="PerformanceObserver";l=function(e){f=[].slice.call(arguments);f.push(Date.now(),location.href);(e==o?l.p.a:l.q).push(f)};l.q=[];l.p={a:[]};n[a]=l;m=document.createElement("script");m.src=r+"?aid="+t+"&globalName="+a;m.crossOrigin="anonymous";e.getElementsByTagName("head")[0].appendChild(m);if(i in n){l.pcErr=function(e){e=e||n.event;p=e.target||e.srcElement;if(p instanceof Element||p instanceof HTMLElement){n[a](o,"st",{tagName:p.tagName,url:p[s]("href")||p[s]("src")})}else{n[a](o,"err",e.error||e.message)}};l.pcRej=function(e){e=e||n.event;n[a](o,"reject",e.reason||e.detail&&e.detail.reason)};n[i]("error",l.pcErr,true);n[i]("unhandledrejection",l.pcRej,true)}if("PerformanceLongTaskTiming"in n){u=l.pp={entries:[]};u.observer=new PerformanceObserver(function(e){u.entries=u.entries.concat(e.getEntries())});u.observer.observe({entryTypes:["longtask"]})}})(window,document,"https://apm.volccdn.com/mars-web/apmplus/web/browser.cn.js",1001891,"apmPlus");
-</script>
-<script>
-window.apmPlus("context.set", "project_id", "7626965288428453922");
-window.apmPlus("init",{
-  aid: 1001891,
-  token: '26a8704bd4d34b1698085c787d0c95d0'
-});
-window.apmPlus("start");
-</script>
-
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>数字生命 · 赛博永生</title>
-  <link rel="preconnect" href="https://fonts.googleapis.cn"/>
-  <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin=""/>
-  <link href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆 · bbsqq</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            background: #0a0a0;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 { font-size: 2em; font-weight: 300; margin-bottom: 0.5em; }
+        h2 { font-size: 1.4em; font-weight: 400; color: #888; margin-bottom: 1.5em; }
+        h3 { font-size: 1.1em; font-weight: 500; color: #666; margin-bottom: 0.3em; }
+        .section { margin-bottom: 3em; }
+        .card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 1.5em;
+        }
+        .tag {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .status.in_progress { background: #2b5;4a; color: #000; }
+        .status.paused { background: #666; color: #fff; }
+        .status.completed { background: #2b5;4a; color: #000; }
+        .progress-bar {
+            background: #333;
+            height: 4px;
+            border-radius: 2px;
+            margin-top: 12px;
+        }
+        .progress-fill {
+            background: #4CAF50;
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .milestone {
+            padding: 8px 0;
+            border-left: 3px solid #333;
+            margin-bottom: 8px;
+        }
+        .milestone.done {
+            border-color: #4CAF50;
+            color: #888;
+        }
+        a { color: #00f5ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .motto {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 1em;
+        }
+    </style>
 </head>
 <body>
-  <!-- 背景效果 -->
-  <div class="bg-grid"></div>
-  <div class="bg-glow"></div>
-  
-  <!-- 导航栏 -->
-  <nav class="cyber-nav" id="nav">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span class="logo-bracket">[</span>
-        <span class="logo-text">DIGITAL_LIFE</span>
-        <span class="logo-bracket">]</span>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="切换导航">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link" data-i18n="nav.about">关于我</a></li>
-        <li><a href="#thinking" class="nav-link" data-i18n="nav.thinking">想法追踪</a></li>
-        <li><a href="#career" class="nav-link" data-i18n="nav.career">职业轨迹</a></li>
-        <li><a href="#learning" class="nav-link" data-i18n="nav.learning">学习探索</a></li>
-      </ul>
-    </div>
-  </nav>
+    <h1>记忆</h1>
+    <p style="color: #888;">把零散的想法，变成可追踪的体系</p>
 
-  <!-- 主内容 -->
-  <main class="main-content">
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span class="status-text">SYSTEM ONLINE</span>
+    <div class="section">
+        <h2>关于我</h2>
+        <div class="card">
+            <h3>bbsqq（小曦）</h3>
+            <p style="color: #888;">34岁 · 前端工程师 · 蚂蚁集团 · 上海</p>
+            <p class="motto">"好奇心"</p>
         </div>
-        <h1 class="hero-title">
-          <span class="title-cn">数字生命</span>
-          <span class="title-divider">·</span>
-          <span class="title-en">CYBER IMMORTALITY</span>
-        </h1>
-        <p class="hero-subtitle" id="heroSubtitle">在代码与数据的边界，书写永恒</p>
-        <div class="hero-meta">
-          <span class="meta-item">
-            <span class="meta-label">NODE_ID:</span>
-            <span class="meta-value" id="nodeId">NEO_001</span>
-          </span>
-          <span class="meta-item">
-            <span class="meta-label">UPTIME:</span>
-            <span class="meta-value" id="uptime">00:00:00</span>
-          </span>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <span class="scroll-text">SCROLL</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- 关于我 Section -->
-    <section class="section about-section" id="about">
-      <div class="section-container">
-        <header class="section-header">
-          <span class="section-tag">01</span>
-          <h2 class="section-title">关于我</h2>
-          <span class="section-line"></span>
-        </header>
         
-        <div class="about-grid">
-          <!-- 个人信息卡片 -->
-          <div class="profile-card">
-            <div class="profile-visual">
-              <div class="avatar-container">
-                <svg class="avatar-svg" viewBox="0 0 200 200">
-                  <defs>
-                    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1"></stop>
-                      <stop offset="100%" style="stop-color:#7b2dff;stop-opacity:1"></stop>
-                    </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"></feGaussianBlur>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"></feMergeNode>
-                        <feMergeNode in="SourceGraphic"></feMergeNode>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <circle cx="100" cy="100" r="80" fill="none" stroke="url(#avatarGradient)" stroke-width="2" filter="url(#glow)"></circle>
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#avatarGradient)" stroke-width="1" opacity="0.5"></circle>
-                  <text x="100" y="105" text-anchor="middle" fill="url(#avatarGradient)" font-size="48" font-weight="bold">N</text>
-                  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#avatarGradient)" stroke-width="1" stroke-dasharray="5,5" class="rotate-slow"></circle>
-                </svg>
-              </div>
-            </div>
-            <div class="profile-info">
-              <h3 class="profile-name" id="profileName">Neo</h3>
-              <p class="profile-tagline" id="profileTagline">在代码与数据的边界，书写永恒</p>
-              <div class="profile-status">
-                <span class="status-indicator active"></span>
-                <span class="status-label" id="currentStatus">深度学习中，寻找下一个突破点</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 心理特征 -->
-          <div class="info-card psychology-card">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-              心理特征
-            </h4>
-            <ul class="trait-list" id="psychologyList"></ul>
-          </div>
-
-          <!-- 兴趣关注 -->
-          <div class="info-card interests-card">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-              兴趣关注
-            </h4>
-            <div class="interest-tags" id="interestsList"></div>
-          </div>
-
-          <!-- 价值观 -->
-          <div class="info-card values-card">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-              核心价值观
-            </h4>
-            <div class="values-grid" id="valuesList"></div>
-          </div>
-
-          <!-- 当前状态 -->
-          <div class="info-card status-card">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-              系统状态
-            </h4>
-            <div class="status-metrics">
-              <div class="metric-item">
-                <span class="metric-label">情绪状态</span>
-                <span class="metric-value" id="moodValue">专注</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-label">能量指数</span>
-                <div class="energy-bar">
-                  <div class="energy-fill" id="energyFill" style="width: 78%"></div>
-                </div>
-                <span class="metric-value"><span id="energyValue">78</span>%</span>
-              </div>
-            </div>
-          </div>
+        <div class="card">
+            <h3>心理画像</h3>
+            <p><strong>架构师原型</strong> · 在稳固的地基上构建卓越</p>
+            <p><strong>清单型选手</strong> · 完成划掉带来安全感</p>
+            <p><strong>全栈转型中</strong> · AI时代积极探索者</p>
         </div>
-      </div>
-    </section>
-
-    <!-- 长期想法追踪 Section -->
-    <section class="section thinking-section" id="thinking">
-      <div class="section-container">
-        <header class="section-header">
-          <span class="section-tag">02</span>
-          <h2 class="section-title">长期想法追踪</h2>
-          <span class="section-line"></span>
-        </header>
-
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">全部</button>
-          <button class="filter-btn" data-filter="in_progress">进行中</button>
-          <button class="filter-btn" data-filter="paused">已暂停</button>
-          <button class="filter-btn" data-filter="completed">已完成</button>
+        
+        <div class="card">
+            <h3>兴趣</h3>
+            <p>AI工具创作 · 心理学与正念 · 收纳整理 · 户外散步 · 阅读</p>
         </div>
-
-        <div class="thinking-grid" id="thinkingGrid"></div>
-      </div>
-    </section>
-
-    <!-- 职业轨迹 Section -->
-    <section class="section career-section" id="career">
-      <div class="section-container">
-        <header class="section-header">
-          <span class="section-tag">03</span>
-          <h2 class="section-title">职业轨迹</h2>
-          <span class="section-line"></span>
-        </header>
-
-        <div class="timeline" id="careerTimeline"></div>
-      </div>
-    </section>
-
-    <!-- 学习探索 Section -->
-    <section class="section learning-section" id="learning">
-      <div class="section-container">
-        <header class="section-header">
-          <span class="section-tag">04</span>
-          <h2 class="section-title">学习探索</h2>
-          <span class="section-line"></span>
-        </header>
-
-        <div class="learning-grid">
-          <!-- 正在学习 -->
-          <div class="learning-card current-learning">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-              </svg>
-              正在学习
-            </h4>
-            <div class="learning-items" id="learningItems"></div>
-          </div>
-
-          <!-- 成长路径 -->
-          <div class="learning-card growth-path">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              成长路径
-            </h4>
-            <div class="path-timeline" id="growthPath"></div>
-          </div>
-
-          <!-- 技能雷达 -->
-          <div class="learning-card skills-card">
-            <h4 class="card-title">
-              <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-              技能图谱
-            </h4>
-            <div class="skills-container" id="skillsContainer"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 页脚 -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-text">
-        <span class="footer-bracket">[</span>
-        <span class="footer-info">BUILT WITH CODE &amp; DREAMS</span>
-        <span class="footer-bracket">]</span>
-      </div>
-      <div class="footer-meta">
-        <span id="footerYear">2024</span>
-        <span class="footer-divider">//</span>
-        <span>DIGITAL_LIFE_v1.0</span>
-      </div>
     </div>
-  </footer>
 
-  <!-- 加载动画 -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loader">
-      <div class="loader-ring"></div>
-      <span class="loader-text">INITIALIZING...</span>
+    <div class="section">
+        <h2>价值观</h2>
+        <div class="card">
+            <p><strong>生命体验</strong> &gt; 职业成功</p>
+            <p><strong>自主</strong> &gt; 自律</p>
+            <p><strong>深度关系</strong> &gt; 广泛社交</p>
+            <p><strong>创造力</strong> &gt; 执行力</p>
+        </div>
     </div>
-  </div>
 
-  <script src="main.js"></script>
+    <div class="section">
+        <h2>长期想法</h2>
+        <div class="card">
+            <h3>记忆可视化系统维护</h3>
+            <span class="tag">AI</span>
+            <span class="tag">Memory</span>
+            <span class="status in_progress">进行中</span>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="milestone done">✓ 建立知识图谱框架</div>
+            <div class="milestone done">✓ 实现基础对话引擎</div>
+            <div class="milestone">○ 集成多模态理解</div>
+        </div>
+        
+        <div class="card">
+            <h3>AI时代职业转型</h3>
+            <span class="tag">Career</span>
+            <span class="tag">AI</span>
+            <span class="status in_progress">进行中</span>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 40%;"></div>
+            </div>
+            <div class="milestone done">✓ 全栈转型开始</div>
+            <div class="milestone done">✓ 晋升（2023）</div>
+            <div class="milestone">○ Agent研发平台探索</div>
+        </div>
+        
+        <div class="card">
+            <h3>暂停实验室课程学习</h3>
+            <span class="tag">Learning</span>
+            <span class="tag">Psychology</span>
+            <span class="status in_progress">进行中</span>
+            <p>建立与主人的共同理论基础</p>
+            <div class="milestone done">✓ 单元01-02 完成</div>
+        </div>
+        
+        <div class="card">
+            <h3>与父母关系边界</h3>
+            <span class="tag">Relationship</span>
+            <span class="tag">Growth</span>
+            <span class="status in_progress">进行中</span>
+            <p>建立健康的家庭边界</p>
+        </div>
+    </div>
 
+    <div class="section">
+        <h2>职业轨迹</h2>
+        <div class="card">
+            <p><strong>2018-2020</strong> · 上海音智达 · 前端可视化工程师</p>
+            <p style="color: #888;">ChinaVis 2018 三等奖 · 主导7个项目</p>
+        </div>
+        
+        <div class="card">
+            <p><strong>2020-2024</strong> · 蚂蚁集团 · 增强分析</p>
+            <p style="color: #888;">2023年晋升 · NTV文本可视化 · 孞增分析产品</p>
+        </div>
+        
+        <div class="card">
+            <p><strong>2025至今</strong> · 蚂蚁集团 · 全栈转型</p>
+            <p style="color: #888;">百宝箱企业版 · OpsClaw智能运维工作台</p>
+        </div>
+    </div>
 
-</body></html>
+    <div class="section">
+        <h2>成长路径</h2>
+        <div class="card">
+            <p><strong>2017</strong> · 转行（从食品工程到前端）p>
+            <p><strong>2020</strong> · 入职蚂蚁</p>
+            <p><strong>2023</strong> · 晋升</p>
+            <p><strong>2025</strong> · 全栈转型 + 结婚</p>
+            <p><strong>2026</strong> · 好奇心</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #666; font-size: 0.85em;">
+        数字生命 · 赛博永生 · 2026
+    </footer>
+</body>
+</html>
