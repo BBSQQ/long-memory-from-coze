@@ -88,7 +88,7 @@
   // ==================== 数据加载 ====================
   async function loadData() {
     try {
-      const response = await fetch('data.json');
+      const response = await fetch('/data.json');
       if (!response.ok) throw new Error('Failed to load data');
       state.data = await response.json();
       return state.data;
